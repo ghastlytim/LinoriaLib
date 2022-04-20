@@ -14,9 +14,9 @@ ProtectGui(ScreenGui);
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global;
 ScreenGui.Parent = CoreGui;
 
-local Toggles = {};
+local Flags = {};
 
-getgenv().Toggles = Toggles;
+getgenv().Flags = Flags;
 
 
 local Library = {
@@ -569,7 +569,7 @@ do
 
         ColorPicker:Display();
 
-        Toggles[Idx] = ColorPicker;
+        Flags[Idx] = ColorPicker;
 
         return self;
     end;
@@ -864,7 +864,7 @@ do
 
         KeyPicker:Update();
 
-        Toggles[Idx] = KeyPicker;
+        Flags[Idx] = KeyPicker;
 
         return self;
     end;
@@ -1086,7 +1086,7 @@ do
         Groupbox:AddBlank(5);
         Groupbox:Resize();
 
-        Toggles[Idx] = Textbox;
+        Flags[Idx] = Textbox;
 
         return Textbox;
     end;
@@ -1202,7 +1202,7 @@ do
         Toggle.Container = Container;
         setmetatable(Toggle, BaseAddons);
 
-        Toggles[Idx] = Toggle;
+        Flags[Idx] = Toggle;
 
         return Toggle;
     end;
@@ -1383,7 +1383,7 @@ do
         Groupbox:AddBlank(Info.BlankSize or 6);
         Groupbox:Resize();
 
-        Toggles[Idx] = Slider;
+        Flags[Idx] = Slider;
 
         return Slider;
     end;
@@ -1758,7 +1758,7 @@ do
         Groupbox:AddBlank(Info.BlankSize or 5);
         Groupbox:Resize();
 
-        Toggles[Idx] = Dropdown;
+        Flags[Idx] = Dropdown;
 
         return Dropdown;
     end;
