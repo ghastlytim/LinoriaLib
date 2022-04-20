@@ -15,10 +15,9 @@ ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global;
 ScreenGui.Parent = CoreGui;
 
 local Toggles = {};
-local Options = {};
 
 getgenv().Toggles = Toggles;
-getgenv().Options = Options;
+
 
 local Library = {
     Registry = {};
@@ -570,7 +569,7 @@ do
 
         ColorPicker:Display();
 
-        Options[Idx] = ColorPicker;
+        Toggles[Idx] = ColorPicker;
 
         return self;
     end;
@@ -865,7 +864,7 @@ do
 
         KeyPicker:Update();
 
-        Options[Idx] = KeyPicker;
+        Toggles[Idx] = KeyPicker;
 
         return self;
     end;
@@ -1087,7 +1086,7 @@ do
         Groupbox:AddBlank(5);
         Groupbox:Resize();
 
-        Options[Idx] = Textbox;
+        Toggles[Idx] = Textbox;
 
         return Textbox;
     end;
@@ -1384,7 +1383,7 @@ do
         Groupbox:AddBlank(Info.BlankSize or 6);
         Groupbox:Resize();
 
-        Options[Idx] = Slider;
+        Toggles[Idx] = Slider;
 
         return Slider;
     end;
@@ -1733,6 +1732,7 @@ do
                     or Mouse.Y < (AbsPos.Y - 20 - 1) or Mouse.Y > AbsPos.Y + AbsSize.Y then
 
                     Dropdown:CloseDropdown();
+                        
                 end;
             end;
         end);
@@ -1758,7 +1758,7 @@ do
         Groupbox:AddBlank(Info.BlankSize or 5);
         Groupbox:Resize();
 
-        Options[Idx] = Dropdown;
+        Toggles[Idx] = Dropdown;
 
         return Dropdown;
     end;
