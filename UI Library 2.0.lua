@@ -6,19 +6,18 @@ local RenderStepped = game:GetService('RunService').RenderStepped;
 local LocalPlayer = game:GetService('Players').LocalPlayer;
 local Mouse = LocalPlayer:GetMouse();
 
-local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end);
-
 local ScreenGui = Instance.new('ScreenGui');
-ProtectGui(ScreenGui);
+(protectgui or syn.protect_gui or (function() end))(ScreenGui);
 
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global;
 ScreenGui.Parent = CoreGui;
 
-local Flags = {};
+local Toggles = {};
+local Options = {};
 
-getgenv().Flags = Flags;
+getgenv().Toggles = Toggles;
+getgenv().Options = Options;
 
-----youiiiiuiuiuiiuiuiuiuuyuiiuyyttthgftrdeswdrfthuk
 local Library = {
     Registry = {};
     RegistryMap = {};
@@ -26,9 +25,9 @@ local Library = {
     HudRegistry = {};
 
     FontColor = Color3.fromRGB(255, 255, 255);
-    MainColor = Color3.fromRGB(0, 0, 0);
-    BackgroundColor = Color3.fromRGB(0, 0, 0);
-    AccentColor = Color3.fromRGB(116, 73, 227);
+    MainColor = Color3.fromRGB(28, 28, 28);
+    BackgroundColor = Color3.fromRGB(20, 20, 20);
+    AccentColor = Color3.fromRGB(0, 85, 255);
     OutlineColor = Color3.fromRGB(50, 50, 50);
 
     Black = Color3.new(0, 0, 0);
@@ -569,7 +568,7 @@ do
 
         ColorPicker:Display();
 
-        Flags[Idx] = ColorPicker;
+        Options[Idx] = ColorPicker;
 
         return self;
     end;
@@ -864,7 +863,7 @@ do
 
         KeyPicker:Update();
 
-        Flags[Idx] = KeyPicker;
+        Options[Idx] = KeyPicker;
 
         return self;
     end;
@@ -1086,7 +1085,7 @@ do
         Groupbox:AddBlank(5);
         Groupbox:Resize();
 
-        Flags[Idx] = Textbox;
+        Options[Idx] = Textbox;
 
         return Textbox;
     end;
@@ -1202,7 +1201,7 @@ do
         Toggle.Container = Container;
         setmetatable(Toggle, BaseAddons);
 
-        Flags[Idx] = Toggle;
+        Toggles[Idx] = Toggle;
 
         return Toggle;
     end;
@@ -1383,7 +1382,7 @@ do
         Groupbox:AddBlank(Info.BlankSize or 6);
         Groupbox:Resize();
 
-        Flags[Idx] = Slider;
+        Options[Idx] = Slider;
 
         return Slider;
     end;
@@ -1732,7 +1731,6 @@ do
                     or Mouse.Y < (AbsPos.Y - 20 - 1) or Mouse.Y > AbsPos.Y + AbsSize.Y then
 
                     Dropdown:CloseDropdown();
-                        
                 end;
             end;
         end);
@@ -1758,7 +1756,7 @@ do
         Groupbox:AddBlank(Info.BlankSize or 5);
         Groupbox:Resize();
 
-        Flags[Idx] = Dropdown;
+        Options[Idx] = Dropdown;
 
         return Dropdown;
     end;
