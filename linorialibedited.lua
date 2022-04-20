@@ -1,3 +1,6 @@
+if not syn or not protectgui then
+    getgenv().protectgui = function()end
+end
 local InputService = game:GetService('UserInputService');
 local TextService = game:GetService('TextService');
 local TweenService = game:GetService('TweenService');
