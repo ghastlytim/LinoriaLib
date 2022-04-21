@@ -12,7 +12,7 @@ Library:Notify('Loading UI...');
 local LegitTab = TestWindow:AddTab('Example');
 local LegitTabbox1 = LegitTab:AddLeftTabbox('Fov');
 local lAimbot1 = LegitTabbox1:AddTab('Fov');
-lAimbot1:AddToggle('Fov_Enabled', { Text = 'Enable fov' }):AddKeyPicker('Test', { Text = 'FovCircle', Default = 'X' });
+lAimbot1:AddToggle('Fov_Enabled', { Text = 'Enable fov' });
 lAimbot1:AddToggle('Fov_filled', { Text = 'Fov Filled' });
 lAimbot1:AddSlider('Fov_Radius', { Text = 'Fov Radius', Default = 0, Min = 0, Max = 300, Rounding = 0, Suffix = '' });
 
@@ -101,7 +101,7 @@ local fovcircle = Drawing.new("Circle")
 fovcircle.Visible = Flags.Fov_Enabled.Value
 fovcircle.Thickness = 1
 fovcircle.Color = Color3.fromRGB(255, 255, 255)
-fovcircle.NumSides 90
+fovcircle.NumSides = 90
 fovcircle.Radius = Flags.Fov_Radius.Value
 fovcircle.Filled = Flags.Fov_filled.Value
 fovcircle.Position = Vector2.new(Mouse.X, Mouse.Y)
