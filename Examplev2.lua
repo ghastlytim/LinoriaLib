@@ -1,7 +1,6 @@
 Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/ghastlytim/LinoriaLib/main/linorialibedited.lua'))();
 
-local Players = game:GetService("Players")
-local LocalPlayer = Players.LocalPlayer
+local LocalPlayer = game.Players.LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
 
 local Fonts = {};
