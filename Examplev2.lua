@@ -19,23 +19,23 @@ lAimbot1:AddSlider('Fov_Radius', { Text = 'Fov Radius', Default = 0, Min = 0, Ma
 local SettingsTab = TestWindow:AddTab('Settings');
 
 local function UpdateTheme()
-    Library.BackgroundColor = Options.BackgroundColor.Value;
-    Library.MainColor = Options.MainColor.Value;
-    Library.AccentColor = Options.AccentColor.Value;
+    Library.BackgroundColor = Flags.BackgroundColor.Value;
+    Library.MainColor = Flags.MainColor.Value;
+    Library.AccentColor = Flags.AccentColor.Value;
     Library.AccentColorDark = Library:GetDarkerColor(Library.AccentColor);
-    Library.OutlineColor = Options.OutlineColor.Value;
-    Library.FontColor = Options.FontColor.Value;
+    Library.OutlineColor = Flags.OutlineColor.Value;
+    Library.FontColor = Flags.FontColor.Value;
 
     Library:UpdateColorsUsingRegistry();
 end;
 
 local function SetDefault()
-    Options.FontColor:SetValueRGB(Color3.fromRGB(255, 255, 255));
-    Options.MainColor:SetValueRGB(Color3.fromRGB(28, 28, 28));
-    Options.BackgroundColor:SetValueRGB(Color3.fromRGB(20, 20, 20));
-    Options.AccentColor:SetValueRGB(Color3.fromRGB(0, 85, 255));
-    Options.OutlineColor:SetValueRGB(Color3.fromRGB(50, 50, 50));
-    Toggles.Rainbow:SetValue(false);
+    Flags.FontColor:SetValueRGB(Color3.fromRGB(255, 255, 255));
+    Flags.MainColor:SetValueRGB(Color3.fromRGB(28, 28, 28));
+    Flags.BackgroundColor:SetValueRGB(Color3.fromRGB(20, 20, 20));
+    Flags.AccentColor:SetValueRGB(Color3.fromRGB(0, 85, 255));
+    Flags.OutlineColor:SetValueRGB(Color3.fromRGB(50, 50, 50));
+    Flags.Rainbow:SetValue(false);
 
     UpdateTheme();
 end;
@@ -49,15 +49,15 @@ Theme:AddLabel('Outline Color'):AddColorPicker('OutlineColor', { Default = Libra
 Theme:AddLabel('Font Color'):AddColorPicker('FontColor', { Default = Library.FontColor });
 Theme:AddButton('Default Theme', SetDefault);
 Theme:AddToggle('Keybinds', { Text = 'Show Keybinds Menu', Default = true }):OnChanged(function()
-    Library.KeybindFrame.Visible = Toggles.Keybinds.Value;
+    Library.KeybindFrame.Visible = Flags.Keybinds.Value;
 end);
 Theme:AddToggle('Watermark', { Text = 'Show Watermark', Default = true }):OnChanged(function()
-    Library:SetWatermarkVisibility(Toggles.Watermark.Value);
+    Library:SetWatermarkVisibility(Flags.Watermark.Value);
 end);
 
 task.spawn(function()
     while game:GetService('RunService').RenderStepped:Wait() do
-        if Toggles.Rainbow.Value then
+        if Flags.Rainbow.Value then
             local Registry = TestWindow.Holder.Visible and Library.Registry or Library.HudRegistry;
 
             for Idx, Object in next, Registry do
@@ -81,17 +81,17 @@ task.spawn(function()
     end;
 end);
 
-Toggles.Rainbow:OnChanged(function()
-    if not Toggles.Rainbow.Value then
+Flags.Rainbow:OnChanged(function()
+    if not Flags.Rainbow.Value then
         UpdateTheme();
     end;
 end);
 
-Options.BackgroundColor:OnChanged(UpdateTheme);
-Options.MainColor:OnChanged(UpdateTheme);
-Options.AccentColor:OnChanged(UpdateTheme);
-Options.OutlineColor:OnChanged(UpdateTheme);
-Options.FontColor:OnChanged(UpdateTheme);
+Flags.BackgroundColor:OnChanged(UpdateTheme);
+Flags.MainColor:OnChanged(UpdateTheme);
+Flags.AccentColor:OnChanged(UpdateTheme);
+Flags.OutlineColor:OnChanged(UpdateTheme);
+Flags.FontColor:OnChanged(UpdateTheme);
 
 Library:Notify('Loaded UI!');
 
