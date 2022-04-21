@@ -1,5 +1,8 @@
 Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/ghastlytim/LinoriaLib/main/linorialibedited.lua'))();
 
+local LocalPlayer = Players.LocalPlayer
+local Mouse = LocalPlayer:GetMouse()
+
 local Fonts = {};
 for Font, _ in next, Drawing.Fonts do
 	table.insert(Fonts, Font);
