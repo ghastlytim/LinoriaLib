@@ -97,7 +97,7 @@ Library:Notify('Loaded UI!');
 
 --quick example on using flags
 
-local fovcircle = drawing.new("Circle")
+local fovcircle = Drawing.new("Circle")
 fovcircle.Visible = Flags.Fov_Enabled.Value
 fovcircle.Thickness = 1
 fovcircle.Color = Color3.fromRGB(255, 255, 255)
