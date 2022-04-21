@@ -101,10 +101,12 @@ Library:Notify('Loaded UI!');
 --quick example on using flags
 
 local fovcircle = Drawing.new("Circle")
-fovcircle.Visible = Flags.Fov_Enabled.Value
+game:GetService("RunService").RenderStepped:Connect(function()
+    fovcircle.Visible = Flags.Fov_Enabled.Value
 fovcircle.Thickness = 1
 fovcircle.Color = Color3.fromRGB(255, 255, 255)
 fovcircle.NumSides = 90
 fovcircle.Radius = Flags.Fov_Radius.Value
 fovcircle.Filled = Flags.Fov_filled.Value
 fovcircle.Position = Vector2.new(Mouse.X, Mouse.Y)
+end)
