@@ -19,6 +19,9 @@ lAimbot1:AddToggle('Fov_Enabled', { Text = 'Enable fov' });
 lAimbot1:AddToggle('Fov_filled', { Text = 'Fov Filled' });
 lAimbot1:AddSlider('Fov_Radius', { Text = 'Fov Radius', Default = 0, Min = 0, Max = 300, Rounding = 0, Suffix = '' });
 
+local lAimbot2 = LegitTabbox1:AddTab('Silent Aim');
+lAimbot2:AddLabel('Nothing here :)');
+
 local SettingsTab = TestWindow:AddTab('Settings');
 
 local function UpdateTheme()
