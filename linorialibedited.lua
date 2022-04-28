@@ -1,6 +1,4 @@
-if not syn or not protectgui then
-    getgenv().protectgui = function()end
-end
+
 local InputService = game:GetService('UserInputService');
 local TextService = game:GetService('TextService');
 local TweenService = game:GetService('TweenService');
@@ -9,7 +7,7 @@ local RenderStepped = game:GetService('RunService').RenderStepped;
 local LocalPlayer = game:GetService('Players').LocalPlayer;
 local Mouse = LocalPlayer:GetMouse();
 
-local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end);
+local ProtectGui = (syn and syn.protect_gui) or function()end;
 
 local ScreenGui = Instance.new('ScreenGui');
 ProtectGui(ScreenGui);
