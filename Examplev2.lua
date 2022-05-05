@@ -54,10 +54,10 @@ else if Flags.Selectedtheme.Value == "TokyoNight" then
     UpdateTheme();
 else if Flags.Selectedtheme.Value == "NekoRed" then
     Flags.FontColor:SetValueRGB(Color3.fromRGB(255, 255, 255));
-    Flags.MainColor:SetValueRGB(Color3.fromRGB(28, 28, 28));
-    Flags.BackgroundColor:SetValueRGB(Color3.fromRGB(20, 20, 20));
-    Flags.AccentColor:SetValueRGB(Color3.fromRGB(0, 85, 255));
-    Flags.OutlineColor:SetValueRGB(Color3.fromRGB(50, 50, 50));
+    Flags.MainColor:SetValueRGB(Color3.fromRGB(23,23,23));
+    Flags.BackgroundColor:SetValueRGB(Color3.fromRGB(18,18,18));
+    Flags.AccentColor:SetValueRGB(Color3.fromRGB(226, 30, 112));
+    Flags.OutlineColor:SetValueRGB(Color3.fromRGB(60, 60, 60));
     Flags.Rainbow:SetValue(false);
     UpdateTheme();
 else if Flags.Selectedtheme.Value == "NekoBlue" then
