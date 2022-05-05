@@ -46,9 +46,9 @@ if Flags.Selectedtheme.Value == "Default" then
     UpdateTheme();
 else if Flags.Selectedtheme.Value == "TokyoNight" then
     Flags.FontColor:SetValueRGB(Color3.fromRGB(255, 255, 255));
-    Flags.MainColor:SetValueRGB(Color3.fromRGB(28, 28, 28));
-    Flags.BackgroundColor:SetValueRGB(Color3.fromRGB(20, 20, 20));
-    Flags.AccentColor:SetValueRGB(Color3.fromRGB(0, 85, 255));
+    Flags.MainColor:SetValueRGB(Color3.fromRGB(24,25,37));
+    Flags.BackgroundColor:SetValueRGB(Color3.fromRGB(22,22,31));
+    Flags.AccentColor:SetValueRGB(Color3.fromRGB(103,89,179));
     Flags.OutlineColor:SetValueRGB(Color3.fromRGB(50, 50, 50));
     Flags.Rainbow:SetValue(false);
     UpdateTheme();
@@ -95,11 +95,11 @@ else if Flags.Selectedtheme.Value == "Twitch" then
 end;
 
 local Theme = SettingsTab:AddLeftGroupbox('Theme');
-Theme:AddLabel('Background Color'):AddColorPicker('BackgroundColor', { Default =  Color3.fromRGB(22,22,31) });
-Theme:AddLabel('Main Color'):AddColorPicker('MainColor', { Default =  Color3.fromRGB(24,25,37) });
-Theme:AddLabel('Accent Color'):AddColorPicker('AccentColor', { Default =  Color3.fromRGB(103,89,179) });
+Theme:AddLabel('Background Color'):AddColorPicker('BackgroundColor', { Default =  Color3.fromRGB(0,0,0) });
+Theme:AddLabel('Main Color'):AddColorPicker('MainColor', { Default =  Color3.fromRGB(0,0,0) });
+Theme:AddLabel('Accent Color'):AddColorPicker('AccentColor', { Default =  Color3.fromRGB(0,0,255)) });
 Theme:AddToggle('Rainbow', { Text = 'Rainbow Accent Color' });
-Theme:AddLabel('Outline Color'):AddColorPicker('OutlineColor', { Default =  Color3.fromRGB(255, 255, 255) });
+Theme:AddLabel('Outline Color'):AddColorPicker('OutlineColor', { Default =  Color3.fromRGB(50, 50, 50) });
 Theme:AddLabel('Font Color'):AddColorPicker('FontColor', { Default = Library.FontColor });
 Theme:AddDropdown('Selectedtheme', { Text = 'Theme', Default = 1, Values = cheatthemes }):OnChanged(function()
    SetThemes(); 
