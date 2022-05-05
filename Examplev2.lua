@@ -34,75 +34,14 @@ local function UpdateTheme()
 
     Library:UpdateColorsUsingRegistry();
 end;
-Local cheatthemes = {"Default","TokyoNight","NekoRed","NekoBlue","Fatality","GameSense","Twitch"}
-if Flags.Selectedtheme.Value == "Default" then
-    Flags.FontColor:SetValueRGB(Color3.fromRGB(255, 255, 255));
-    Flags.MainColor:SetValueRGB(Color3.fromRGB(0,0,0));
-    Flags.BackgroundColor:SetValueRGB(Color3.fromRGB(0,0,0));
-    Flags.AccentColor:SetValueRGB(Color3.fromRGB(0,0,255));
-    Flags.OutlineColor:SetValueRGB(Color3.fromRGB(50, 50, 50));
-    Flags.Rainbow:SetValue(false);
-    UpdateTheme();
-else if Flags.Selectedtheme.Value == "TokyoNight" then
-    Flags.FontColor:SetValueRGB(Color3.fromRGB(255, 255, 255));
-    Flags.MainColor:SetValueRGB(Color3.fromRGB(24,25,37));
-    Flags.BackgroundColor:SetValueRGB(Color3.fromRGB(22,22,31));
-    Flags.AccentColor:SetValueRGB(Color3.fromRGB(103,89,179));
-    Flags.OutlineColor:SetValueRGB(Color3.fromRGB(50, 50, 50));
-    Flags.Rainbow:SetValue(false);
-    UpdateTheme();
-else if Flags.Selectedtheme.Value == "NekoRed" then
-    Flags.FontColor:SetValueRGB(Color3.fromRGB(255, 255, 255));
-    Flags.MainColor:SetValueRGB(Color3.fromRGB(23,23,23));
-    Flags.BackgroundColor:SetValueRGB(Color3.fromRGB(18,18,18));
-    Flags.AccentColor:SetValueRGB(Color3.fromRGB(226, 30, 112));
-    Flags.OutlineColor:SetValueRGB(Color3.fromRGB(60, 60, 60));
-    Flags.Rainbow:SetValue(false);
-    UpdateTheme();
-else if Flags.Selectedtheme.Value == "NekoBlue" then
-    Flags.FontColor:SetValueRGB(Color3.fromRGB(255, 255, 255));
-    Flags.MainColor:SetValueRGB(Color3.fromRGB(28, 28, 28));
-    Flags.BackgroundColor:SetValueRGB(Color3.fromRGB(20, 20, 20));
-    Flags.AccentColor:SetValueRGB(Color3.fromRGB(0, 85, 255));
-    Flags.OutlineColor:SetValueRGB(Color3.fromRGB(50, 50, 50));
-    Flags.Rainbow:SetValue(false);
-    UpdateTheme();
-else if Flags.Selectedtheme.Value == "Fatality" then
-    Flags.FontColor:SetValueRGB(Color3.fromRGB(255, 255, 255));
-    Flags.MainColor:SetValueRGB(Color3.fromRGB(28, 28, 28));
-    Flags.BackgroundColor:SetValueRGB(Color3.fromRGB(20, 20, 20));
-    Flags.AccentColor:SetValueRGB(Color3.fromRGB(0, 85, 255));
-    Flags.OutlineColor:SetValueRGB(Color3.fromRGB(50, 50, 50));
-    Flags.Rainbow:SetValue(false);
-    UpdateTheme();
-else if Flags.Selectedtheme.Value == "GameSense" then
-    Flags.FontColor:SetValueRGB(Color3.fromRGB(255, 255, 255));
-    Flags.MainColor:SetValueRGB(Color3.fromRGB(28, 28, 28));
-    Flags.BackgroundColor:SetValueRGB(Color3.fromRGB(20, 20, 20));
-    Flags.AccentColor:SetValueRGB(Color3.fromRGB(0, 85, 255));
-    Flags.OutlineColor:SetValueRGB(Color3.fromRGB(50, 50, 50));
-    Flags.Rainbow:SetValue(false);
-    UpdateTheme();
-else if Flags.Selectedtheme.Value == "Twitch" then
-    Flags.FontColor:SetValueRGB(Color3.fromRGB(255, 255, 255));
-    Flags.MainColor:SetValueRGB(Color3.fromRGB(28, 28, 28));
-    Flags.BackgroundColor:SetValueRGB(Color3.fromRGB(20, 20, 20));
-    Flags.AccentColor:SetValueRGB(Color3.fromRGB(0, 85, 255));
-    Flags.OutlineColor:SetValueRGB(Color3.fromRGB(50, 50, 50));
-    Flags.Rainbow:SetValue(false);
-    UpdateTheme();
-end
 
 local Theme = SettingsTab:AddLeftGroupbox('Theme');
-Theme:AddLabel('Background Color'):AddColorPicker('BackgroundColor', { Default =  Color3.fromRGB(0,0,0) });
-Theme:AddLabel('Main Color'):AddColorPicker('MainColor', { Default =  Color3.fromRGB(0,0,0) });
-Theme:AddLabel('Accent Color'):AddColorPicker('AccentColor', { Default =  Color3.fromRGB(0,0,255)) });
+Theme:AddLabel('Background Color'):AddColorPicker('BackgroundColor', { Default =  Color3.fromRGB(18,18,18) });
+Theme:AddLabel('Main Color'):AddColorPicker('MainColor', { Default =  Color3.fromRGB(23,23,23) });
+Theme:AddLabel('Accent Color'):AddColorPicker('AccentColor', { Default =  Color3.fromRGB(0, 247, 255)) });
 Theme:AddToggle('Rainbow', { Text = 'Rainbow Accent Color' });
-Theme:AddLabel('Outline Color'):AddColorPicker('OutlineColor', { Default =  Color3.fromRGB(50, 50, 50) });
+Theme:AddLabel('Outline Color'):AddColorPicker('OutlineColor', { Default =  Color3.fromRGB(60, 60, 60) });
 Theme:AddLabel('Font Color'):AddColorPicker('FontColor', { Default = Library.FontColor });
-Theme:AddDropdown('Selectedtheme', { Text = 'Theme', Default = 1, Values = cheatthemes }):OnChanged(function()
-   SetThemes(); 
-end);
 Theme:AddToggle('Keybinds', { Text = 'Show Keybinds Menu', Default = true }):OnChanged(function()
     Library.KeybindFrame.Visible = Flags.Keybinds.Value;
 end);
