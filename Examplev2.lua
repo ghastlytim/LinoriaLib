@@ -1,4 +1,4 @@
-Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/ghastlytim/LinoriaLib/main/linorialibedited.lua'))();
+Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/ghastlytim/modules/main/linoriaedit.lua'))();
 
 local LocalPlayer = game.Players.LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
