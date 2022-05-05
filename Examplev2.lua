@@ -1,5 +1,5 @@
 Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/ghastlytim/modules/main/linoriaedit.lua'))();
-
+local SaveManager = loadstring(game:HttpGet('https://raw.githubusercontent.com/ghastlytim/modules/main/savemanager.lua'))()
 local LocalPlayer = game.Players.LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
 
@@ -97,6 +97,7 @@ elseif Flags.Selectedtheme.Value == "Twitch" then
 end
 end;
 
+SaveManager:BuildConfigSection(SettingsTab)
 local Theme = SettingsTab:AddLeftGroupbox('Theme');
 Theme:AddLabel('Background Color'):AddColorPicker('BackgroundColor', { Default =  Color3.fromRGB(0,0,0) });
 Theme:AddLabel('Main Color'):AddColorPicker('MainColor', { Default =  Color3.fromRGB(0,0,0) });
