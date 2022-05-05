@@ -8,11 +8,11 @@ for Font, _ in next, Drawing.Fonts do
 	table.insert(Fonts, Font);
 end;
 
-local TestWindow = Library:CreateWindow('window title');
-Library:SetWatermark('watermark!!! (hi)');
+local TestWindow = Library:CreateWindow('SomaHook');
+Library:SetWatermark('SomaHook | Tester | Version: 1.0.0');
 Library:Notify('Loading UI...');
 
-local LegitTab = TestWindow:AddTab('Example');
+local LegitTab = TestWindow:AddTab('Fov Test');
 local LegitTabbox1 = LegitTab:AddLeftTabbox('Fov');
 local lAimbot1 = LegitTabbox1:AddTab('Fov');
 lAimbot1:AddToggle('Fov_Enabled', { Text = 'Enable fov' });
