@@ -34,7 +34,9 @@ local function UpdateTheme()
 
     Library:UpdateColorsUsingRegistry();
 end;
-Local cheatthemes = {"Default","TokyoNight","NekoRed","NekoBlue","Fatality","GameSense","Twitch"}
+
+local cheatthemes = {"Default","TokyoNight","NekoRed","NekoBlue","Fatality","GameSense","Twitch"}
+
 local function SetThemes()
 if Flags.Selectedtheme.Value == "Default" then
     Flags.FontColor:SetValueRGB(Color3.fromRGB(255, 255, 255));
