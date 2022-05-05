@@ -47,11 +47,11 @@ local function SetDefault()
 end;
 
 local Theme = SettingsTab:AddLeftGroupbox('Theme');
-Theme:AddLabel('Background Color'):AddColorPicker('BackgroundColor', { Default = Library.BackgroundColor });
-Theme:AddLabel('Main Color'):AddColorPicker('MainColor', { Default = Library.MainColor });
-Theme:AddLabel('Accent Color'):AddColorPicker('AccentColor', { Default = Library.AccentColor });
+Theme:AddLabel('Background Color'):AddColorPicker('BackgroundColor', { Default =  Color3.fromRGB(22,22,31) });
+Theme:AddLabel('Main Color'):AddColorPicker('MainColor', { Default =  Color3.fromRGB(24,25,37) });
+Theme:AddLabel('Accent Color'):AddColorPicker('AccentColor', { Default =  Color3.fromRGB(103,89,179) });
 Theme:AddToggle('Rainbow', { Text = 'Rainbow Accent Color' });
-Theme:AddLabel('Outline Color'):AddColorPicker('OutlineColor', { Default = Library.OutlineColor });
+Theme:AddLabel('Outline Color'):AddColorPicker('OutlineColor', { Default =  Color3.fromRGB(255, 255, 255) });
 Theme:AddLabel('Font Color'):AddColorPicker('FontColor', { Default = Library.FontColor });
 Theme:AddButton('Default Theme', SetDefault);
 Theme:AddToggle('Keybinds', { Text = 'Show Keybinds Menu', Default = true }):OnChanged(function()
