@@ -34,7 +34,7 @@ local function UpdateTheme()
 
     Library:UpdateColorsUsingRegistry();
 end;
-
+Local cheatthemes = 
 local function SetDefault()
 if Flags.Selectedtheme.Value == "Default" then
     Flags.FontColor:SetValueRGB(Color3.fromRGB(255, 255, 255));
@@ -101,7 +101,9 @@ Theme:AddLabel('Accent Color'):AddColorPicker('AccentColor', { Default =  Color3
 Theme:AddToggle('Rainbow', { Text = 'Rainbow Accent Color' });
 Theme:AddLabel('Outline Color'):AddColorPicker('OutlineColor', { Default =  Color3.fromRGB(255, 255, 255) });
 Theme:AddLabel('Font Color'):AddColorPicker('FontColor', { Default = Library.FontColor });
-Theme:AddButton('Default Theme', SetDefault);
+Theme:AddDropdown('Selectedtheme', { Text = 'Theme', Default = 1, Values = Fonts }):OnChanged(function()
+    
+end);
 Theme:AddToggle('Keybinds', { Text = 'Show Keybinds Menu', Default = true }):OnChanged(function()
     Library.KeybindFrame.Visible = Flags.Keybinds.Value;
 end);
