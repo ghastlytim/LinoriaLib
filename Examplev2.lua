@@ -92,6 +92,7 @@ else if Flags.Selectedtheme.Value == "Twitch" then
     Flags.OutlineColor:SetValueRGB(Color3.fromRGB(50, 50, 50));
     Flags.Rainbow:SetValue(false);
     UpdateTheme();
+end
 end;
 
 local Theme = SettingsTab:AddLeftGroupbox('Theme');
