@@ -45,7 +45,52 @@ if Flags.Selectedtheme.Value == "Default" then
     Flags.Rainbow:SetValue(false);
     UpdateTheme();
 else if Flags.Selectedtheme.Value == "TokyoNight" then
-
+    Flags.FontColor:SetValueRGB(Color3.fromRGB(255, 255, 255));
+    Flags.MainColor:SetValueRGB(Color3.fromRGB(28, 28, 28));
+    Flags.BackgroundColor:SetValueRGB(Color3.fromRGB(20, 20, 20));
+    Flags.AccentColor:SetValueRGB(Color3.fromRGB(0, 85, 255));
+    Flags.OutlineColor:SetValueRGB(Color3.fromRGB(50, 50, 50));
+    Flags.Rainbow:SetValue(false);
+    UpdateTheme();
+else if Flags.Selectedtheme.Value == "NekoRed" then
+    Flags.FontColor:SetValueRGB(Color3.fromRGB(255, 255, 255));
+    Flags.MainColor:SetValueRGB(Color3.fromRGB(28, 28, 28));
+    Flags.BackgroundColor:SetValueRGB(Color3.fromRGB(20, 20, 20));
+    Flags.AccentColor:SetValueRGB(Color3.fromRGB(0, 85, 255));
+    Flags.OutlineColor:SetValueRGB(Color3.fromRGB(50, 50, 50));
+    Flags.Rainbow:SetValue(false);
+    UpdateTheme();
+else if Flags.Selectedtheme.Value == "NekoBlue" then
+    Flags.FontColor:SetValueRGB(Color3.fromRGB(255, 255, 255));
+    Flags.MainColor:SetValueRGB(Color3.fromRGB(28, 28, 28));
+    Flags.BackgroundColor:SetValueRGB(Color3.fromRGB(20, 20, 20));
+    Flags.AccentColor:SetValueRGB(Color3.fromRGB(0, 85, 255));
+    Flags.OutlineColor:SetValueRGB(Color3.fromRGB(50, 50, 50));
+    Flags.Rainbow:SetValue(false);
+    UpdateTheme();
+else if Flags.Selectedtheme.Value == "Fatality" then
+    Flags.FontColor:SetValueRGB(Color3.fromRGB(255, 255, 255));
+    Flags.MainColor:SetValueRGB(Color3.fromRGB(28, 28, 28));
+    Flags.BackgroundColor:SetValueRGB(Color3.fromRGB(20, 20, 20));
+    Flags.AccentColor:SetValueRGB(Color3.fromRGB(0, 85, 255));
+    Flags.OutlineColor:SetValueRGB(Color3.fromRGB(50, 50, 50));
+    Flags.Rainbow:SetValue(false);
+    UpdateTheme();
+else if Flags.Selectedtheme.Value == "GameSense" then
+    Flags.FontColor:SetValueRGB(Color3.fromRGB(255, 255, 255));
+    Flags.MainColor:SetValueRGB(Color3.fromRGB(28, 28, 28));
+    Flags.BackgroundColor:SetValueRGB(Color3.fromRGB(20, 20, 20));
+    Flags.AccentColor:SetValueRGB(Color3.fromRGB(0, 85, 255));
+    Flags.OutlineColor:SetValueRGB(Color3.fromRGB(50, 50, 50));
+    Flags.Rainbow:SetValue(false);
+    UpdateTheme();
+else if Flags.Selectedtheme.Value == "Twitch" then
+    Flags.FontColor:SetValueRGB(Color3.fromRGB(255, 255, 255));
+    Flags.MainColor:SetValueRGB(Color3.fromRGB(28, 28, 28));
+    Flags.BackgroundColor:SetValueRGB(Color3.fromRGB(20, 20, 20));
+    Flags.AccentColor:SetValueRGB(Color3.fromRGB(0, 85, 255));
+    Flags.OutlineColor:SetValueRGB(Color3.fromRGB(50, 50, 50));
+    Flags.Rainbow:SetValue(false);
     UpdateTheme();
 end;
 
