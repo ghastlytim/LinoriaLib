@@ -35,7 +35,6 @@ local function UpdateTheme()
     Library:UpdateColorsUsingRegistry();
 end;
 Local cheatthemes = {"Default","TokyoNight","NekoRed","NekoBlue","Fatality","GameSense","Twitch"}
-local function SetThemes()
 if Flags.Selectedtheme.Value == "Default" then
     Flags.FontColor:SetValueRGB(Color3.fromRGB(255, 255, 255));
     Flags.MainColor:SetValueRGB(Color3.fromRGB(0,0,0));
@@ -93,7 +92,6 @@ else if Flags.Selectedtheme.Value == "Twitch" then
     Flags.Rainbow:SetValue(false);
     UpdateTheme();
 end
-end;
 
 local Theme = SettingsTab:AddLeftGroupbox('Theme');
 Theme:AddLabel('Background Color'):AddColorPicker('BackgroundColor', { Default =  Color3.fromRGB(0,0,0) });
