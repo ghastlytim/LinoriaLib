@@ -1,5 +1,5 @@
 Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/ghastlytim/modules/main/linoriaedit.lua'))();
-local SaveManager = loadstring(game:HttpGet('https://raw.githubusercontent.com/ghastlytim/modules/main/savemanager.lua'))()
+
 local LocalPlayer = game.Players.LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
 
@@ -12,15 +12,39 @@ local TestWindow = Library:CreateWindow('SomaHook');
 Library:SetWatermark('SomaHook | Tester | Version: 1.0.0');
 Library:Notify('Loading UI...');
 
-local LegitTab = TestWindow:AddTab('Fov Test');
-local LegitTabbox1 = LegitTab:AddLeftTabbox('Fov');
-local lAimbot1 = LegitTabbox1:AddTab('Fov');
-lAimbot1:AddToggle('Fov_Enabled', { Text = 'Enable fov' });
-lAimbot1:AddToggle('Fov_filled', { Text = 'Fov Filled' });
-lAimbot1:AddSlider('Fov_Radius', { Text = 'Fov Radius', Default = 0, Min = 0, Max = 300, Rounding = 0, Suffix = '' });
+local LegitTab = TestWindow:AddTab('Legit');
+local LegitTabbox1 = LegitTab:AddLeftTabbox('Aimbot');
+local lAimbot1 = LegitTabbox1:AddTab('Aimbot');
+lAimbot1:AddToggle('Aimbot', { Text = 'Aimbot' }):AddKeyPicker('Test', { Text = 'Aimbot', Default = 'X' });
+lAimbot1:AddToggle('CheckTeam', { Text = 'Team Check' });
+lAimbot1:AddToggle('CheckVis', { Text = 'Visibility Check' });
+lAimbot1:AddToggle('VisPriority', { Text = 'Prioritize Visibles' });
+lAimbot1:AddToggle('IgnoreFOV', { Text = 'Ignore FOV' });
+lAimbot1:AddSlider('FOV', { Text = 'Aimbot FOV', Default = 10, Min = 0, Max = 10, Rounding = 1 });
+lAimbot1:AddSlider('SwitchDelay', { Text = 'Switch Delay', Default = 0, Min = 0, Max = 1000, Rounding = 0, Suffix = 'ms' });
+lAimbot1:AddSlider('HeadshotPercent', { Text = 'Headshot %', Default = 0, Min = 0, Max = 100, Rounding = 0, Suffix = '%' });
 
 local lAimbot2 = LegitTabbox1:AddTab('Silent Aim');
 lAimbot2:AddLabel('Nothing here :)');
+
+local lAimbotSettings = LegitTab:AddRightTabbox();
+
+local LegitSettings = lAimbotSettings:AddTab('Aimbot Settings');
+LegitSettings:AddSlider('AimTime', { Text = 'Smoothing', Default = 0, Min = 0, Max = 2000, Rounding = 0, Suffix = 'ms' });
+LegitSettings:AddToggle('AimbotClosest', { Text = 'Aim at Closest Part' });
+
+local VisualsTab = TestWindow:AddTab('Visuals');
+
+local ESP = VisualsTab:AddLeftTabbox();
+local EnemyESP = ESP:AddTab('Enemy ESP');
+EnemyESP:AddToggle('Nametags', { Text = 'Nametags' }):AddColorPicker('nColor', { Default = Color3.new(1, 1, 1) });
+EnemyESP:AddToggle('Distance', { Text = 'Display Distance' });
+EnemyESP:AddToggle('Boxes', { Text = 'Boxes' }):AddColorPicker('vbColor', { Default = Color3.new(0, 1, 0) }):AddColorPicker('nvbColor', { Default = Color3.new(1, 0, 0) });
+EnemyESP:AddToggle('Healthbar', { Text = 'Healthbars' }):AddColorPicker('hColor', { Default = Color3.new(0, 1, 0) });
+
+local ESPSettings = ESP:AddTab('ESP Settings');
+ESPSettings:AddSlider('FontSize', { Text = 'Font Size', Default = 14, Min = 8, Max = 24, Rounding = 0 });
+ESPSettings:AddDropdown('SelectedFont', { Text = 'ESP Font', Default = 1, Values = Fonts });
 
 local SettingsTab = TestWindow:AddTab('Settings');
 
@@ -97,7 +121,6 @@ elseif Flags.Selectedtheme.Value == "Twitch" then
 end
 end;
 
-SaveManager:BuildConfigSection(SettingsTab)
 local Theme = SettingsTab:AddLeftGroupbox('Theme');
 Theme:AddLabel('Background Color'):AddColorPicker('BackgroundColor', { Default =  Color3.fromRGB(0,0,0) });
 Theme:AddLabel('Main Color'):AddColorPicker('MainColor', { Default =  Color3.fromRGB(0,0,0) });
